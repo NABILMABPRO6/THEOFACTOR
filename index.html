@@ -91,9 +91,14 @@
 
         /* === NAVIGATION REDESIGN (Transparent -> Sticky) === */
         .nav-section { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; background-color: transparent; transition: background-color 0.4s ease-out, padding 0.4s ease-out, box-shadow 0.4s ease-out; }
-        .nav-section.sticky-nav { position: fixed; background-color: var(--white); padding: 12px 0; box-shadow: var(--shadow-md); border-bottom: 1px solid var(--border-light); }
+        .nav-section.sticky-nav { position: fixed; background-color: var(--white); padding: 10px 0; /* Adjusted padding slightly for taller logo */ box-shadow: var(--shadow-md); border-bottom: 1px solid var(--border-light); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand-link img { max-height: 40px; display: block; transition: filter 0.4s ease; }
+        .nav-brand-link img {
+            max-height: 50px; /* UPDATED: Increased logo size */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            transition: filter 0.4s ease;
+         }
         .nav-section:not(.sticky-nav) .nav-brand-link img { /* filter: brightness(0) invert(1); */ /* Uncomment for white logo on dark hero */ }
         .nav-menu-wrapper { display: none; align-items: center; gap: 1.8rem; }
         .nav-link { color: var(--light-text-color); font-weight: 500; position: relative; padding: 0.5em 0; font-size: 0.95rem; transition: color 0.4s ease; }
@@ -119,8 +124,15 @@
         /* === CLIENT LOGOS === */
         .client-section { padding: 50px 0; background-color: var(--section-bg-soft); }
         .client-con .block-overline { color: var(--grey-text-color); font-size: 0.75rem; letter-spacing: 3px;}
-        .client-logo-carousel { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: clamp(2rem, 6vw, 4rem); margin-top: 30px; }
-        .client-logo-item img { max-height: 40px; width: auto; filter: grayscale(100%) opacity(0.6); transition: filter 0.3s ease, opacity 0.3s ease; }
+        .client-logo-carousel { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: clamp(2.5rem, 7vw, 5rem); /* Increased gap slightly */ margin-top: 30px; }
+        .client-logo-item img {
+            max-height: 60px; /* UPDATED: Increased logo size */
+            height: auto; /* Maintain aspect ratio */
+            width: auto;
+            max-width: 150px; /* Optional: prevent overly wide logos */
+            filter: grayscale(100%) opacity(0.6);
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
         .client-logo-item img:hover { filter: none; opacity: 1; }
 
         /* === INTRO / ABOUT === */
@@ -178,7 +190,7 @@
         .form-group textarea { min-height: 120px; resize: vertical; }
         .form-group small { display: block; margin-top: 0.3em; font-size: 0.8rem; color: var(--grey-text-color); }
         .form-submit-btn { width: 100%; padding: 15px 30px; font-size: 1.1rem; }
-        .form-confirmation { text-align: center; font-size: 0.9rem; margin-top: 1.5em; color: var(--body-text-color); }
+        .form-confirmation { text-align: center; font-size: 0.9rem; margin-top: 1.5em; color: var(--body-text-color); display: none; /* Hidden by default */ }
 
 
         /* === FOOTER CTA (RENAMED ID) === */
@@ -254,6 +266,8 @@
              .hero-concepts-list { gap: 1rem 1.5rem; justify-content: center;}
              .hero-concept-item { font-size: 0.85rem;}
              .contact-form-wrapper { padding: 2rem 1.5rem; } /* Adjust form padding on mobile */
+             .nav-brand-link img { max-height: 45px; } /* Slightly smaller logo on mobile */
+             .client-logo-item img { max-height: 50px; } /* Slightly smaller client logos on mobile */
          }
 
     </style>
@@ -265,6 +279,7 @@
     <nav class="nav-section" id="main-nav">
         <div class="container nav-container">
             <a href="/" aria-current="page" class="nav-brand-link">
+                 <!-- Make sure the image path is correct -->
                  <img src="THE O FACTOR.png" alt="The Oxygen Factor Logo">
             </a>
             <div class="nav-menu-container">
@@ -338,20 +353,31 @@
         </header>
         <!-- === END HERO SECTION === -->
 
-        <!-- Client Logo Section -->
+       <!-- Client Logo Section -->
         <section id="clients" class="section client-section section-narrow section-bg-soft">
             <div class="container client-con">
                 <div class="block-overline is-center">TRUSTED BY BRANDS LIKE YOURS</div>
                 <div class="client-logo-carousel">
-                     <!-- TODO: Replace placeholders -->
-                     <div class="client-logo-item"><img src="https://via.placeholder.com/150x40/F0FAFA/bbbbbb?text=Client+A" alt="Client Logo A"></div>
-                     <div class="client-logo-item"><img src="https://via.placeholder.com/160x35/F0FAFA/bbbbbb?text=Client+B" alt="Client Logo B"></div>
-                     <div class="client-logo-item"><img src="https://via.placeholder.com/140x45/F0FAFA/bbbbbb?text=Client+C" alt="Client Logo C"></div>
-                     <div class="client-logo-item"><img src="https://via.placeholder.com/155x40/F0FAFA/bbbbbb?text=Client+D" alt="Client Logo D"></div>
-                     <div class="client-logo-item"><img src="https://via.placeholder.com/145x42/F0FAFA/bbbbbb?text=Client+E" alt="Client Logo E"></div>
+                     <!-- Make sure logo paths are correct -->
+                     <div class="client-logo-item">
+                         <img src="Client Logo A.PNG" alt="Client Logo A">
+                     </div>
+                     <div class="client-logo-item">
+                         <img src="Client Logo B.PNG" alt="Client Logo B">
+                     </div>
+                     <div class="client-logo-item">
+                         <img src="Client Logo B.PNG" alt="Client Logo C"> <!-- Assuming same logo used -->
+                     </div>
+                     <div class="client-logo-item">
+                         <img src="Client Logo B.PNG" alt="Client Logo D"> <!-- Assuming same logo used -->
+                     </div>
+                     <div class="client-logo-item">
+                         <img src="Client Logo B.PNG" alt="Client Logo E"> <!-- Assuming same logo used -->
+                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Intro / Why Oxygen Factor Section -->
         <section id="about" class="section intro-section">
@@ -407,7 +433,10 @@
                     </div>
                     <!-- Service 3: Ads -->
                      <div class="service-wrapper">
-                        <div class="service-icon"><i class="fa-solid fa-bullseye-arrow fa-fw"></i></div>
+                        <div class="service-icon">
+                            <!-- UPDATED: Added Icon -->
+                            <i class="fa-solid fa-bullseye-arrow fa-fw"></i>
+                        </div>
                         <h3 class="service-title">Targeted Ad Campaigns</h3>
                         <div class="service-content">
                             <p>Launch and manage effective ad campaigns (e.g., Meta, Google) designed to reach ideal clients and drive bookings.</p>
@@ -426,6 +455,7 @@
                              <p>Get personalized guidance and support to empower you or your team to manage aspects of your marketing effectively.</p>
                               <ul class="service-list-con">
                                  <li class="service-list-wrapper"><i class="fas fa-check-circle service-list-icon"></i><div>Ongoing Mentorship & Support</div></li>
+                                 <!-- Removed empty li -->
                               </ul>
                          </div>
                      </div>
@@ -531,6 +561,7 @@
                                 <i class="fab fa-whatsapp"></i> Send Request
                             </button>
                         </div>
+                         <!-- UPDATED: Confirmation message added (initially hidden by CSS) -->
                          <p class="form-confirmation">Thanks! I'll be in touch via WhatsApp soon.</p>
                     </form>
                 </div>
@@ -576,13 +607,15 @@
                              <li>
                                  <div class="footer-contact">
                                      <i class="fas fa-envelope fa-fw"></i>
-                                     <a href="mailto:nabil@theoxygenfactor.com" class="footer-contact-link">nabil@theoxygenfactor.com</a>
+                                     <!-- UPDATED: Email -->
+                                     <a href="mailto:nabilmabpro@gmail.com" class="footer-contact-link">nabilmabpro@gmail.com</a>
                                  </div>
                              </li>
                              <li>
                                  <div class="footer-contact">
                                      <i class="fas fa-phone fa-fw"></i>
-                                     <a href="tel:+1234567890" class="footer-contact-link">+1 234 567 890</a> <!-- TODO: Update Phone -->
+                                     <!-- UPDATED: Phone -->
+                                     <a href="tel:+212679444525" class="footer-contact-link">+212 679 444 525</a>
                                  </div>
                             </li>
                             <li>
@@ -597,9 +630,11 @@
                     <div class="footer-menu-con">
                         <div class="footer-menu-title">Follow Me</div>
                         <div class="footer-soc-con">
-                            <a href="#" target="_blank" class="footer-soc-wrapper" title="LinkedIn"><i class="fab fa-linkedin"></i></a> <!-- TODO: URL -->
-                            <a href="#" target="_blank" class="footer-soc-wrapper" title="Instagram"><i class="fab fa-instagram"></i></a> <!-- TODO: URL -->
-                             <a href="#" target="_blank" class="footer-soc-wrapper" title="Facebook"><i class="fab fa-facebook-f"></i></a> <!-- TODO: URL -->
+                            <!-- REMOVED: LinkedIn Link -->
+                            <!-- UPDATED: Instagram Link -->
+                            <a href="https://www.instagram.com/nabilsp2024/?hl=en" target="_blank" class="footer-soc-wrapper" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <!-- UPDATED: Facebook Link -->
+                            <a href="https://www.facebook.com/profile.php?id=100070079559003" target="_blank" class="footer-soc-wrapper" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                      <div class="footer-menu-con footer-back-to-top">
@@ -680,17 +715,23 @@
                     if (target.length) {
                         event.preventDefault();
                         let scrollTargetPosition = target.offset().top;
-                        let currentNavHeight = $('#main-nav').outerHeight() || 70;
+                        let currentNavHeight = $('#main-nav').outerHeight() || 70; // Use current height
                         let isStickyNow = $(window).scrollTop() > stickyTriggerPoint;
                         let willBeSticky = scrollTargetPosition > stickyTriggerPoint;
 
                         // Adjust offset based on whether nav *will be* sticky at destination
-                        if (willBeSticky) {
-                            scrollTargetPosition -= currentNavHeight;
-                        } else if (isStickyNow && !willBeSticky) {
-                            // Special case: scrolling up past the trigger point
-                            // No nav offset needed as it will become non-sticky
-                        }
+                        // Use the height it *will* have when sticky
+                        let stickyNavHeight = $('.nav-section.sticky-nav').outerHeight() || currentNavHeight; // Estimate sticky height if not yet sticky
+                         if (willBeSticky) {
+                             scrollTargetPosition -= stickyNavHeight;
+                         } else if (isStickyNow && !willBeSticky) {
+                              // No nav offset needed if scrolling up past trigger
+                         } else {
+                             // If not sticky now and won't be sticky, account for potential initial padding/height difference
+                             scrollTargetPosition -= 0; // Usually no offset needed here unless initial nav is very tall
+                         }
+
+
                          scrollTargetPosition -= 20; // Increase buffer slightly for form section
 
                         $('html, body').animate({ scrollTop: Math.max(0, scrollTargetPosition) }, 800); // Ensure not scrolling < 0
@@ -730,11 +771,13 @@
              }
 
             // --- Optional: Basic Form Handling Placeholder ---
-            // You'll need to replace this with actual form submission logic (e.g., AJAX to a server endpoint, or using a service like Netlify Forms/Formspree)
             $('#whatsapp-contact-form').on('submit', function(e) {
                 e.preventDefault(); // Prevent default browser submission
 
-                // Basic validation check (can be more robust)
+                var form = $(this);
+                var confirmationMessage = form.find('.form-confirmation');
+
+                // Basic validation check
                 var name = $('#name').val();
                 var whatsapp = $('#whatsapp').val();
                 if (!name || !whatsapp) {
@@ -742,33 +785,39 @@
                     return;
                 }
 
-                // --- TODO: Replace this alert with your actual form submission code ---
-                // Example: Send data via AJAX
+                // --- TODO: Replace this section with your actual AJAX form submission ---
+                console.log('Simulating form submission...');
+                console.log('Form Data:', form.serialize());
+
+                // Simulate successful submission:
+                // Hide the form fields (optional)
+                form.find('.form-group').not(':has(.form-confirmation)').slideUp();
+                 // Show the confirmation message
+                 confirmationMessage.fadeIn();
+
+                // Simulate clearing the form (optional, do this in AJAX success usually)
+                // form[0].reset(); // Resets the form fields
+
+                // If using AJAX, the success callback would look something like this:
                 /*
                 $.ajax({
-                    url: 'your-server-endpoint.php', // Or your form service URL
+                    url: 'YOUR_ENDPOINT_HERE', // e.g., Netlify function, Formspree, PHP script
                     method: 'POST',
-                    data: $(this).serialize(),
+                    data: form.serialize(),
+                    dataType: 'json', // Or appropriate type
                     success: function(response) {
                         console.log('Form submitted successfully:', response);
-                        $('#whatsapp-contact-form').hide(); // Hide form
-                        $('.form-confirmation').text('Thank you! Your request has been sent. We will contact you via WhatsApp shortly.').show(); // Show success message
+                        form.find('.form-group').not(':has(.form-confirmation)').slideUp(); // Hide form fields
+                        confirmationMessage.text('Thank you! Your request has been sent successfully.').fadeIn(); // Show success message
+                        // form[0].reset(); // Clear the form
                     },
                     error: function(xhr, status, error) {
                         console.error('Form submission error:', error);
-                        alert('There was an error submitting the form. Please try again later.');
+                         confirmationMessage.text('Sorry, there was an error sending your request. Please try again.').css('color', 'red').fadeIn(); // Show error
                     }
                 });
                 */
-
-                // --- Placeholder behavior: Show confirmation, clear form ---
-                alert('Form would be submitted here. Implement backend handling.');
-                console.log('Form Data:', $(this).serialize()); // Log data to console for testing
-                $(this).find('input[type="text"], input[type="email"], input[type="tel"], textarea').val(''); // Clear form fields
-                $('.form-confirmation').fadeIn(); // Show confirmation message
-                // Optionally hide the form fields or the whole form wrapper after submission
-                // $(this).find('.form-group').not(':last-child').hide(); // Example: hide fields but keep confirmation visible
-                // --- End Placeholder ---
+                // --- End Placeholder / TODO Section ---
             });
 
 
