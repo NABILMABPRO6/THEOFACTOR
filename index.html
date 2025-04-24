@@ -7,17 +7,17 @@
     <!-- OG/Twitter Meta Tags -->
     <meta content="The Oxygen Factor – Fuel Your Brand. Fill Your Bookings." property="og:title"/>
     <meta content="Clear, committed digital marketing strategy and support for beauty and wellness professionals. Let your brand breathe." property="og:description"/>
-    <meta content="<!-- TODO: Add actual URL for OG preview image -->" property="og:image"/> <!-- Placeholder -->
+    <meta content="<!-- TODO: Add actual FULL URL for OG preview image -->" property="og:image"/> <!-- Placeholder -->
     <meta content="The Oxygen Factor – Fuel Your Brand. Fill Your Bookings." property="twitter:title"/>
     <meta content="Clear, committed digital marketing strategy and support for beauty and wellness professionals. Let your brand breathe." property="twitter:description"/>
-    <meta content="<!-- TODO: Add actual URL for Twitter preview image -->" property="twitter:image"/> <!-- Placeholder -->
+    <meta content="<!-- TODO: Add actual FULL URL for Twitter preview image -->" property="twitter:image"/> <!-- Placeholder -->
     <meta property="og:type" content="website"/>
     <meta content="summary_large_image" name="twitter:card"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
     <!-- Favicons -->
-    <link href="<!-- TODO: Add actual URL for favicon.ico -->" rel="shortcut icon" type="image/x-icon"/> <!-- Placeholder -->
-    <link href="<!-- TODO: Add actual URL for apple-touch-icon.png -->" rel="apple-touch-icon"/> <!-- Placeholder -->
+    <link href="<!-- TODO: Add actual path for favicon.ico -->" rel="shortcut icon" type="image/x-icon"/> <!-- Placeholder -->
+    <link href="<!-- TODO: Add actual path for apple-touch-icon.png -->" rel="apple-touch-icon"/> <!-- Placeholder -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -89,10 +89,11 @@
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 35px; border-radius: var(--radius); text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); font-weight: 600; cursor: pointer; border: none; font-size: 1rem; text-align: center; vertical-align: middle; line-height: 1.3; -webkit-appearance: none; -moz-appearance: none; appearance: none; /* Ensure consistent button appearance */ }
         .btn i, .btn svg { /* Support both Font Awesome and potentially SVG icons */ margin-right: 0.6em; font-size: 0.9em; line-height: 1; /* Better icon alignment */ }
         .primary-btn { background-color: var(--primary); color: var(--light-text-color); box-shadow: var(--shadow-sm); }
-        .primary-btn:hover { background-color: var(--primary-darker); transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0, 180, 179, 0.3); }
+        .primary-btn:hover:not(:disabled) { background-color: var(--primary-darker); transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0, 180, 179, 0.3); }
         .secondary-btn { background-color: transparent; color: var(--primary); border: 2px solid var(--primary); }
-        .secondary-btn:hover { background-color: var(--primary); color: var(--light-text-color); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .secondary-btn:hover:not(:disabled) { background-color: var(--primary); color: var(--light-text-color); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
         .btn:focus-visible { /* Improved focus state for accessibility */ outline: 2px solid var(--primary-darker); outline-offset: 2px; }
+        .btn:disabled { cursor: not-allowed; opacity: 0.7; } /* Style for disabled button */
 
         /* === NAVIGATION === */
         .nav-section { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; background-color: transparent; transition: background-color 0.4s ease-out, padding 0.4s ease-out, box-shadow 0.4s ease-out; }
@@ -109,7 +110,7 @@
         .nav-section:not(.sticky-nav) .nav-link:hover { color: var(--primary); }
 
         /* === HERO SECTION === */
-        .hero-section-new { padding: 140px 0 clamp(5rem, 12vw, 8rem) 0; min-height: 70vh; display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; color: var(--light-text-color); background-color: #333; /* Fallback color */ /* UPDATED: background-image path */ background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('HERO SECTION.jpeg'); background-size: cover; background-position: center center; }
+        .hero-section-new { padding: 140px 0 clamp(5rem, 12vw, 8rem) 0; min-height: 70vh; display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; color: var(--light-text-color); background-color: #333; /* Fallback color */ /* TODO: Verify HERO SECTION.jpeg path/name or update */ background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('HERO SECTION.jpeg'); background-size: cover; background-position: center center; }
         .hero-content-wrapper { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         .hero-overline-new { color: var(--accent) !important; font-size: 1rem; font-weight: 600; letter-spacing: 0.5px; text-transform: none; margin-bottom: 1em; display: block; }
         .hero-header-new { color: var(--light-text-color) !important; font-size: clamp(2.6rem, 7vw, 4rem); font-weight: 700; line-height: 1.25; margin: 0 auto 0.5em auto; position: relative; min-height: 90px; max-width: 850px; }
@@ -294,7 +295,8 @@
     <nav class="nav-section" id="main-nav" aria-label="Main navigation">
         <div class="container nav-container">
             <a href="/" aria-current="page" class="nav-brand-link">
-                 <img src="THE O FACTOR.png" alt="The Oxygen Factor Logo"> <!-- Assumes logo is in the same folder -->
+                 <!-- TODO: Verify 'THE O FACTOR.png' path/name -->
+                 <img src="THE O FACTOR.png" alt="The Oxygen Factor Logo">
             </a>
             <div class="nav-menu-container">
                 <!-- Desktop Menu -->
@@ -368,18 +370,23 @@
                 <div id="client-heading" class="block-overline is-center">TRUSTED BY BRANDS LIKE YOURS</div>
                 <div class="client-logo-carousel">
                      <div class="client-logo-item">
-                         <img src="Client Logo A.PNG" alt="Client Logo A"> <!-- Assumes logo is in the same folder -->
+                          <!-- TODO: Verify 'Client Logo A.PNG' path/name -->
+                         <img src="Client Logo A.PNG" alt="Client Logo A">
                      </div>
                      <div class="client-logo-item">
-                         <img src="Client Logo B.PNG" alt="Client Logo B"> <!-- Assumes logo is in the same folder -->
+                          <!-- TODO: Verify 'Client Logo B.PNG' path/name -->
+                         <img src="Client Logo B.PNG" alt="Client Logo B">
                      </div>
                      <div class="client-logo-item">
+                          <!-- TODO: Replace with actual logo file and update alt text -->
                          <img src="Client Logo B.PNG" alt="Client Logo C"> <!-- Placeholder name -->
                      </div>
                      <div class="client-logo-item">
+                          <!-- TODO: Replace with actual logo file and update alt text -->
                          <img src="Client Logo B.PNG" alt="Client Logo D"> <!-- Placeholder name -->
                      </div>
                      <div class="client-logo-item">
+                           <!-- TODO: Replace with actual logo file and update alt text -->
                          <img src="Client Logo B.PNG" alt="Client Logo E"> <!-- Placeholder name -->
                      </div>
                 </div>
@@ -392,7 +399,7 @@
             <div class="container">
                  <div class="grid-2-col">
                      <div class="intro-image">
-                        <!-- TODO: Replace placeholder image with actual relevant content -->
+                        <!-- TODO: Replace placeholder image with actual relevant content and update alt text -->
                         <img src="https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?auto=compress&cs=tinysrgb&w=600" loading="lazy" alt="Focused digital marketing professional analyzing charts on a laptop">
                     </div>
                      <div class="intro-details">
@@ -491,7 +498,7 @@
                          </a>
                     </div>
                      <div class="why-us-image">
-                         <!-- TODO: Replace placeholder image with actual relevant content -->
+                         <!-- TODO: Replace placeholder image with actual relevant content and update alt text -->
                         <img src="https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=600" loading="lazy" alt="Two professionals collaborating over a tablet in a bright office">
                     </div>
                 </div>
@@ -549,8 +556,8 @@
                 <p class="text-center max-width-narrow" style="margin-bottom: 3em;">Fill out the form below, and I'll contact you via WhatsApp to discuss how The Oxygen Factor can help your business.</p>
 
                 <div class="contact-form-wrapper">
-                    <!-- TODO: Configure form submission: Add a real 'action' URL (e.g., Netlify Forms, Formspree, custom backend endpoint) or handle via JS AJAX. -->
-                    <form action="#" method="POST" id="whatsapp-contact-form" novalidate> <!-- Added novalidate to rely on custom JS/backend validation -->
+                    <!-- Form action is less critical now as we use fetch, but good practice to keep it -->
+                    <form action="https://formspree.io/f/xkgrnyba" method="POST" id="whatsapp-contact-form" novalidate> <!-- Kept action for non-JS fallback (though unlikely) -->
                         <div class="form-group">
                             <label for="name">Full Name <span class="accent-text">*</span></label>
                             <input type="text" id="name" name="name" placeholder="Enter your full name" required aria-required="true" autocomplete="name">
@@ -640,9 +647,11 @@
                     <div class="footer-menu-con">
                         <h3 class="footer-menu-title">Follow Me</h3> <!-- Changed to h3 -->
                         <div class="footer-soc-con">
+                            <!-- TODO: Verify Instagram link -->
                             <a href="https://www.instagram.com/nabilsp2024/?hl=en" target="_blank" rel="noopener noreferrer" class="footer-soc-wrapper" title="Instagram" aria-label="Visit The Oxygen Factor on Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
+                             <!-- TODO: Verify Facebook link -->
                             <a href="https://www.facebook.com/profile.php?id=100070079559003" target="_blank" rel="noopener noreferrer" class="footer-soc-wrapper" title="Facebook" aria-label="Visit The Oxygen Factor on Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
@@ -780,25 +789,21 @@
                         let navOffset = 0;
 
                         // Calculate offset based on whether nav *will be* sticky at the destination
-                        // This requires checking the target position relative to the trigger point
                         if (mainNav) {
                             const isCurrentlySticky = mainNav.classList.contains('sticky-nav');
                             const willBeSticky = scrollTargetPosition > 100; // Use the trigger point
 
                             if (willBeSticky) {
-                                // Estimate sticky nav height (might need adjustment if padding changes drastically)
                                 navOffset = mainNav.offsetHeight > 40 ? mainNav.offsetHeight : 70; // Use current height or a fallback
                             } else if (isCurrentlySticky && !willBeSticky) {
-                                // If scrolling up past the trigger point, no offset needed
                                 navOffset = 0;
                             } else {
-                                // Not sticky now, won't be sticky at target
-                                navOffset = 0; // Or adjust if initial nav has significant padding
+                                navOffset = 0;
                             }
                          }
 
                         scrollTargetPosition -= navOffset;
-                        scrollTargetPosition -= 20; // Add a small buffer (e.g., for spacing above section title)
+                        scrollTargetPosition -= 20; // Add a small buffer
 
                         window.scrollTo({
                             top: Math.max(0, scrollTargetPosition), // Ensure not scrolling to negative values
@@ -821,11 +826,10 @@
                      burger.setAttribute('aria-expanded', !isExpanded);
 
                      if (!isExpanded) {
-                         mobileNav.style.display = 'block'; // Or use slideToggle with jQuery if preferred
+                         mobileNav.style.display = 'block';
                          body.classList.add('overflow-hidden');
                      } else {
-                         mobileNav.style.display = 'none';
-                         body.classList.remove('overflow-hidden');
+                         closeMobileNav(); // Use function to ensure body class is removed
                      }
                  });
              }
@@ -839,10 +843,12 @@
                  }
              }
 
-            // --- Basic Form Handling Placeholder ---
+            // --- Form Handling with Fetch to Formspree & Custom Confirmation ---
             const contactForm = document.getElementById('whatsapp-contact-form');
             if (contactForm) {
                 const confirmationMessage = contactForm.querySelector('.form-confirmation');
+                const submitButton = contactForm.querySelector('.form-submit-btn');
+                const formSpreeEndpoint = 'https://formspree.io/f/xkgrnyba'; // <-- YOUR SPECIFIC ENDPOINT
 
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault(); // Prevent default browser submission
@@ -852,72 +858,96 @@
                     const whatsappInput = document.getElementById('whatsapp');
                     if (!nameInput.value.trim() || !whatsappInput.value.trim()) {
                         alert('Please fill in all required fields (Name and WhatsApp Number).');
-                        // Optionally add visual indication to fields
                         if (!nameInput.value.trim()) nameInput.focus();
                         else if (!whatsappInput.value.trim()) whatsappInput.focus();
-                        return;
+                        return; // Stop if validation fails
                     }
 
-                    // --- TODO: Replace this section with your actual form submission logic (e.g., AJAX) ---
-                    console.log('Simulating form submission...');
+                    // Disable button and show loading state (optional but good UX)
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                        // Using text indicator; replace with FontAwesome if preferred and ensure FA is loaded
+                        submitButton.innerHTML = 'Sending...';
+                        // Example with FontAwesome spinner:
+                        // submitButton.innerHTML = '<i class="fas fa-spinner fa-spin fa-fw"></i> Sending...';
+                    }
+
+                    // Prepare data for sending
                     const formData = new FormData(contactForm);
-                    for (let [key, value] of formData.entries()) {
-                        console.log(`${key}: ${value}`);
-                    }
 
-                    // Simulate successful submission:
-                    // Hide form groups except the confirmation message container
-                    const formGroups = contactForm.querySelectorAll('.form-group');
-                    formGroups.forEach(group => {
-                        if (!group.contains(confirmationMessage)) {
-                            // Using style.display = 'none' for simplicity; slideUp needs jQuery or custom animation
-                            group.style.display = 'none';
-                        }
-                    });
-
-                    // Show the confirmation message
-                    if (confirmationMessage) {
-                        confirmationMessage.style.display = 'block'; // Or use fadeIn with jQuery
-                    }
-
-                    // Optionally clear the form after a delay or upon successful AJAX response
-                    // contactForm.reset();
-
-                    /* Example using Fetch API for AJAX submission:
-                    fetch('YOUR_SERVER_ENDPOINT', { // Replace with your actual endpoint
+                    // Send data using Fetch API
+                    fetch(formSpreeEndpoint, {
                         method: 'POST',
-                        body: new FormData(contactForm) // Sends form data
-                        // Or headers + JSON body if your endpoint expects JSON:
-                        // headers: { 'Content-Type': 'application/json' },
-                        // body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json' // Important for Formspree to know how to respond
+                        }
                     })
                     .then(response => {
-                        if (!response.ok) {
-                            // Throw an error if response status is not 2xx
-                            throw new Error(`HTTP error! status: ${response.status}`);
+                        if (response.ok) {
+                            // SUCCESS: Formspree accepted the submission
+                            console.log('Form submitted successfully to Formspree.');
+
+                            // Hide form groups except the confirmation message container
+                            const formGroups = contactForm.querySelectorAll('.form-group');
+                            formGroups.forEach(group => {
+                                if (!group.contains(confirmationMessage)) {
+                                    group.style.display = 'none'; // Hide the group
+                                }
+                            });
+
+                            // Show your custom confirmation message
+                            if (confirmationMessage) {
+                                confirmationMessage.textContent = "Thanks! I'll be in touch via WhatsApp soon.";
+                                confirmationMessage.style.color = 'var(--body-text-color)'; // Reset color just in case
+                                confirmationMessage.style.display = 'block';
+                            }
+                            // contactForm.reset(); // Optionally clear the form fields
+
+                        } else {
+                            // ERROR: Formspree returned an error
+                            response.json().then(data => { // Try to get error details from Formspree
+                                console.error('Formspree submission error:', data);
+                                let errorText = 'Sorry, there was a problem submitting your request. Please try again.';
+                                if (data && data.errors) {
+                                    // Use Formspree's specific error message if available
+                                    errorText = data.errors.map(error => error.message).join(', ');
+                                }
+                                if (confirmationMessage) {
+                                    confirmationMessage.textContent = errorText;
+                                    confirmationMessage.style.color = 'red'; // Make error visible
+                                    confirmationMessage.style.display = 'block';
+                                }
+                            }).catch(jsonError => {
+                                // Fallback error if parsing Formspree response fails
+                                console.error('Error parsing Formspree error response:', jsonError);
+                                if (confirmationMessage) {
+                                    confirmationMessage.textContent = 'Sorry, an unexpected error occurred. Please try again.';
+                                    confirmationMessage.style.color = 'red';
+                                    confirmationMessage.style.display = 'block';
+                                }
+                            });
+                            // Re-enable the button on error
+                            if (submitButton) {
+                                submitButton.disabled = false;
+                                submitButton.innerHTML = '<i class="fab fa-whatsapp fa-fw"></i> Send Request'; // Reset button text
+                            }
                         }
-                        return response.json(); // Or response.text() if it doesn't return JSON
                     })
-                    .then(data => {
-                        console.log('Success:', data);
-                        // Show success message
-                        formGroups.forEach(group => { if (!group.contains(confirmationMessage)) group.style.display = 'none'; });
-                        if (confirmationMessage) confirmationMessage.style.display = 'block';
-                        // contactForm.reset(); // Optionally reset form
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                        // Show an error message to the user
+                    .catch(error => {
+                        // NETWORK ERROR: Couldn't reach Formspree
+                        console.error('Network error submitting form:', error);
                         if (confirmationMessage) {
-                            confirmationMessage.textContent = 'Sorry, there was an error sending your request. Please try again later.';
-                            confirmationMessage.style.color = 'red'; // Indicate error visually
+                            confirmationMessage.textContent = 'Network error. Please check your connection and try again.';
+                            confirmationMessage.style.color = 'red';
                             confirmationMessage.style.display = 'block';
                         }
-                         // Optionally re-display form fields on error
-                         // formGroups.forEach(group => { group.style.display = 'block'; });
+                        // Re-enable the button on network error
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.innerHTML = '<i class="fab fa-whatsapp fa-fw"></i> Send Request'; // Reset button text
+                        }
                     });
-                    */
-                    // --- End Placeholder / TODO Section ---
                 });
             }
 
