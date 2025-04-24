@@ -52,7 +52,7 @@
 
         /* === GLOBAL STYLES === */
         *, *::before, *::after { box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 100%; -webkit-tap-highlight-color: rgba(0,0,0,0); } /* Added tap highlight removal */
+        html { scroll-behavior: smooth; font-size: 100%; -webkit-tap-highlight-color: rgba(0,0,0,0); }
         body { margin: 0; font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; color: var(--body-text-color); background-color: var(--white); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
         a { text-decoration: none; color: var(--primary); transition: color 0.3s ease; }
@@ -62,7 +62,7 @@
         h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
         h3 { font-size: clamp(1.3rem, 4vw, 1.6rem); }
         p { margin: 0 0 1.5em 0; }
-        p:last-child { margin-bottom: 0; } /* Remove margin from last paragraph in a container */
+        p:last-child { margin-bottom: 0; }
         ul, ol { margin: 0 0 1.5em 0; padding-left: 1.5em; }
         li { margin-bottom: 0.5em; }
 
@@ -70,7 +70,6 @@
         .container { width: 92%; max-width: 1180px; margin: 0 auto; padding: 0 15px; }
         .section { padding: clamp(4rem, 10vw, 6rem) 0; position: relative; overflow: hidden; }
         .section-narrow { padding: clamp(3rem, 8vw, 4.5rem) 0; }
-        .block-padding { padding: 0; } /* Consider removing if unused */
         .section-bg-light { background-color: var(--secondary); }
         .section-bg-soft { background-color: var(--soft-contrast); }
         .section + .section:not(.footer-cta-section):not(.footer-section) { border-top: 1px solid var(--border-light); }
@@ -86,39 +85,39 @@
         .accent-text { color: var(--accent); font-weight: 600;}
 
         /* === BUTTONS === */
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 35px; border-radius: var(--radius); text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); font-weight: 600; cursor: pointer; border: none; font-size: 1rem; text-align: center; vertical-align: middle; line-height: 1.3; -webkit-appearance: none; -moz-appearance: none; appearance: none; /* Ensure consistent button appearance */ }
-        .btn i, .btn svg { /* Support both Font Awesome and potentially SVG icons */ margin-right: 0.6em; font-size: 0.9em; line-height: 1; /* Better icon alignment */ }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 35px; border-radius: var(--radius); text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); font-weight: 600; cursor: pointer; border: none; font-size: 1rem; text-align: center; vertical-align: middle; line-height: 1.3; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+        .btn i, .btn svg { margin-right: 0.6em; font-size: 0.9em; line-height: 1; }
         .primary-btn { background-color: var(--primary); color: var(--light-text-color); box-shadow: var(--shadow-sm); }
         .primary-btn:hover:not(:disabled) { background-color: var(--primary-darker); transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0, 180, 179, 0.3); }
         .secondary-btn { background-color: transparent; color: var(--primary); border: 2px solid var(--primary); }
         .secondary-btn:hover:not(:disabled) { background-color: var(--primary); color: var(--light-text-color); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-        .btn:focus-visible { /* Improved focus state for accessibility */ outline: 2px solid var(--primary-darker); outline-offset: 2px; }
-        .btn:disabled { cursor: not-allowed; opacity: 0.7; } /* Style for disabled button */
+        .btn:focus-visible { outline: 2px solid var(--primary-darker); outline-offset: 2px; }
+        .btn:disabled { cursor: not-allowed; opacity: 0.7; }
 
         /* === NAVIGATION === */
         .nav-section { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; background-color: transparent; transition: background-color 0.4s ease-out, padding 0.4s ease-out, box-shadow 0.4s ease-out; }
         .nav-section.sticky-nav { position: fixed; background-color: var(--white); padding: 10px 0; box-shadow: var(--shadow-md); border-bottom: 1px solid var(--border-light); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand-link img { max-height: 50px; height: auto; display: block; transition: filter 0.4s ease; /* Logo transition - currently not used */ }
-        /* .nav-section:not(.sticky-nav) .nav-brand-link img { filter: brightness(0) invert(1); } */ /* Uncomment for white logo on dark hero */
+        .nav-brand-link img { max-height: 50px; height: auto; display: block; transition: filter 0.4s ease; }
+        /* .nav-section:not(.sticky-nav) .nav-brand-link img { filter: brightness(0) invert(1); } */
         .nav-menu-wrapper { display: none; align-items: center; gap: 1.8rem; }
         .nav-link { color: var(--light-text-color); font-weight: 500; position: relative; padding: 0.5em 0; font-size: 0.95rem; transition: color 0.4s ease; }
         .nav-section.sticky-nav .nav-link { color: var(--dark-text); }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease-out; }
         .nav-link:hover::after, .nav-link.w--current::after { width: 100%; }
-        .nav-link:hover, .nav-link:focus-visible { color: var(--primary); outline: none; } /* Added focus state */
+        .nav-link:hover, .nav-link:focus-visible { color: var(--primary); outline: none; }
         .nav-section:not(.sticky-nav) .nav-link:hover { color: var(--primary); }
 
         /* === HERO SECTION === */
-        .hero-section-new { padding: 140px 0 clamp(5rem, 12vw, 8rem) 0; min-height: 70vh; display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; color: var(--light-text-color); background-color: #333; /* Fallback color */ /* TODO: Verify HERO SECTION.jpeg path/name or update */ background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('HERO SECTION.jpeg'); background-size: cover; background-position: center center; }
+        .hero-section-new { padding: 140px 0 clamp(5rem, 12vw, 8rem) 0; min-height: 70vh; display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; color: var(--light-text-color); background-color: #333; /* Fallback */ /* TODO: Verify HERO SECTION.jpeg path/name or update */ background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('HERO SECTION.jpeg'); background-size: cover; background-position: center center; }
         .hero-content-wrapper { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         .hero-overline-new { color: var(--accent) !important; font-size: 1rem; font-weight: 600; letter-spacing: 0.5px; text-transform: none; margin-bottom: 1em; display: block; }
         .hero-header-new { color: var(--light-text-color) !important; font-size: clamp(2.6rem, 7vw, 4rem); font-weight: 700; line-height: 1.25; margin: 0 auto 0.5em auto; position: relative; min-height: 90px; max-width: 850px; }
-        .hero-header-new .anim-text { font-family: 'Caveat Brush', cursive; font-weight: 400; text-transform: none; font-size: 95%; line-height: 1.3; display: inline-block; margin-right: 10px; opacity: 0; position: absolute; top: 0; /* Explicitly set top for GSAP */ left: 0; right: 0; margin-left: auto; margin-right: auto; clip: rect(0px, 0px, 400px, 0px); color: var(--light-text-color) !important; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .hero-header-new .anim-text { font-family: 'Caveat Brush', cursive; font-weight: 400; text-transform: none; font-size: 95%; line-height: 1.3; display: inline-block; margin-right: 10px; opacity: 0; position: absolute; top: 0; left: 0; right: 0; margin-left: auto; margin-right: auto; clip: rect(0px, 0px, 400px, 0px); color: var(--light-text-color) !important; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
         .hero-subheadline-new { font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255, 255, 255, 0.9); margin: 0 auto 2em auto; max-width: 700px; line-height: 1.7; }
         .hero-cta-wrapper { margin-top: 2.5em; margin-bottom: 3em; }
         .hero-cta-wrapper .btn { padding: 16px 40px; font-size: 1.05rem; }
-        .hero-concepts-list { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem 2.5rem; margin-top: 1.5em; padding: 0; list-style: none; /* Remove default list styles */ }
+        .hero-concepts-list { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem 2.5rem; margin-top: 1.5em; padding: 0; list-style: none; }
         .hero-concept-item { display: flex; align-items: center; gap: 0.7em; font-size: 0.9rem; font-weight: 500; color: rgba(255, 255, 255, 0.85); }
         .hero-concept-item i { color: var(--primary); font-size: 1.1em; }
 
@@ -136,12 +135,12 @@
 
         /* === SERVICES SECTION === */
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; margin-top: 45px; }
-        .service-wrapper { background-color: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--border-light); min-height: 400px; /* Ensures cards have same height baseline */ }
+        .service-wrapper { background-color: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--border-light); min-height: 400px; }
         .service-wrapper:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-        .service-icon { background-color: rgba(0, 180, 179, 0.08); color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.5em; flex-shrink: 0; /* Prevent icon shrinking */ }
+        .service-icon { background-color: rgba(0, 180, 179, 0.08); color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.5em; flex-shrink: 0; }
         .service-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 1em; }
         .service-content p { font-size: 0.95rem; margin-bottom: 1.5em;}
-        .service-list-con { margin: 1.5em 0; padding-left: 0; list-style: none; flex-grow: 1; /* Allows list to fill space */ }
+        .service-list-con { margin: 1.5em 0; padding-left: 0; list-style: none; flex-grow: 1; }
         .service-list-wrapper { display: flex; align-items: flex-start; margin-bottom: 0.8em; color: var(--body-text-color); font-size: 0.9rem;}
         .service-list-icon { width: 18px; height: 18px; margin-right: 10px; color: var(--primary); flex-shrink: 0; margin-top: 3px; }
         .service-cta-wrapper { text-align: center; margin-top: 3rem; }
@@ -165,22 +164,18 @@
         .testimonial-author span { font-weight: 400; color: var(--grey-text-color); display: block; font-size: 0.85rem; margin-top: 5px;}
 
         /* === CONTACT FORM SECTION === */
-        #contact-form-section { padding: clamp(3rem, 8vw, 5rem) 0; } /* Added -section to ID to avoid conflict */
+        #contact-form-section { padding: clamp(3rem, 8vw, 5rem) 0; }
         .contact-form-wrapper { max-width: 700px; margin: 0 auto; padding: clamp(2rem, 5vw, 3rem); background-color: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
         .form-group { margin-bottom: 1.5rem; }
         .form-group label { display: block; font-weight: 600; margin-bottom: 0.5em; color: var(--dark-text); font-size: 0.9rem; cursor: pointer; }
         .form-group input[type="text"],
         .form-group input[type="email"],
         .form-group input[type="tel"],
-        .form-group textarea {
-            width: 100%; padding: 12px 15px; border: 1px solid var(--border-light); border-radius: var(--radius); font-family: inherit; font-size: 1rem; transition: border-color 0.3s ease, box-shadow 0.3s ease; -webkit-appearance: none; appearance: none; /* Remove default styling */
-        }
+        .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid var(--border-light); border-radius: var(--radius); font-family: inherit; font-size: 1rem; transition: border-color 0.3s ease, box-shadow 0.3s ease; -webkit-appearance: none; appearance: none; }
         .form-group input[type="text"]:focus,
         .form-group input[type="email"]:focus,
         .form-group input[type="tel"]:focus,
-        .form-group textarea:focus {
-            outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 180, 179, 0.15);
-        }
+        .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 180, 179, 0.15); }
         .form-group textarea { min-height: 120px; resize: vertical; }
         .form-group small { display: block; margin-top: 0.3em; font-size: 0.8rem; color: var(--grey-text-color); }
         .form-submit-btn { width: 100%; padding: 15px 30px; font-size: 1.1rem; }
@@ -194,8 +189,8 @@
         #cta-final p { color: rgba(255, 255, 255, 0.95); max-width: 680px; margin: 0 auto 2.5em auto; font-size: 1.1rem; }
         #cta-final .btn.primary-btn { background-color: var(--white); color: var(--primary); font-weight: 700; padding: 16px 40px; font-size: 1.05rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         #cta-final .btn.primary-btn:hover { background-color: var(--secondary); color: var(--dark-text); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
-        #cta-final .btn.primary-btn i, #cta-final .btn.primary-btn span { color: var(--primary) !important; /* Ensure icon and text color consistent */ }
-        #cta-final .btn.primary-btn:hover i, #cta-final .btn.primary-btn:hover span { color: var(--dark-text) !important; /* Change on hover */ }
+        #cta-final .btn.primary-btn i, #cta-final .btn.primary-btn span { color: var(--primary) !important; }
+        #cta-final .btn.primary-btn:hover i, #cta-final .btn.primary-btn:hover span { color: var(--dark-text) !important; }
 
         /* === FOOTER SECTION === */
         .footer-section { background-color: var(--deep-neutral); color: #b5b5b5; padding: 70px 0 30px 0; font-size: 0.9rem; }
@@ -207,28 +202,27 @@
         .footer-link:hover, .footer-link:focus-visible { color: var(--primary); outline: none; }
         .footer-contact { display: flex; align-items: center; margin-bottom: 1em; }
         .footer-contact i { width: 20px; text-align: center; margin-right: 10px; color: var(--primary); font-size: 1.1em; flex-shrink: 0; }
-        .footer-contact-link { color: #b5b5b5; text-decoration: none; word-break: break-word; /* Prevent long links overflowing */ }
+        .footer-contact-link { color: #b5b5b5; text-decoration: none; word-break: break-word; }
         .footer-contact-link:hover, .footer-contact-link:focus-visible { color: var(--primary); outline: none; }
         .footer-soc-con { display: flex; gap: 18px; margin-top: 5px; }
         .footer-soc-wrapper { color: #b5b5b5; font-size: 1.3rem; transition: color 0.3s ease, transform 0.3s ease; }
         .footer-soc-wrapper:hover, .footer-soc-wrapper:focus-visible { color: var(--primary); transform: translateY(-2px); outline: none; }
-        .footer-back-to-top { justify-self: end; align-self: end; } /* Align back-to-top */
-        .footer-back-to-top .footer-link { font-size: 1.5rem; display: inline-block; padding: 5px; /* Larger click target */ }
+        .footer-back-to-top { justify-self: end; align-self: end; }
+        .footer-back-to-top .footer-link { font-size: 1.5rem; display: inline-block; padding: 5px; }
         .footnote { text-align: center; border-top: 1px solid #444; padding-top: 30px; font-size: 0.8rem; color: #999; }
 
         /* === MOBILE NAV & RESPONSIVE === */
-        .burger { display: none; /* Hidden by default, shown via media query */ width: 28px; height: 20px; position: relative; margin-left: 1rem; cursor: pointer; z-index: 1001; border: none; background: transparent; padding: 0; }
+        .burger { display: none; width: 28px; height: 20px; position: relative; margin-left: 1rem; cursor: pointer; z-index: 1001; border: none; background: transparent; padding: 0; }
         .burger-wrapper { width: 100%; height: 100%; position: relative; }
-        .burger-line { display: block; width: 100%; height: 2px; background-color: var(--dark-text); border-radius: 3px; position: absolute; left: 0; transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.4s ease; /* Added background transition */ }
+        .burger-line { display: block; width: 100%; height: 2px; background-color: var(--dark-text); border-radius: 3px; position: absolute; left: 0; transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.4s ease; }
         .nav-section:not(.sticky-nav) .burger-line { background-color: var(--white); }
         .burger-line.top-line { top: 0; }
         .burger-line.bot-line { bottom: 0; }
         .burger.active .burger-line.top-line { transform: translateY(9px) rotate(45deg); }
         .burger.active .burger-line.bot-line { transform: translateY(-9px) rotate(-45deg); }
-        .burger:focus-visible { /* Accessibility */ outline: 2px solid var(--primary); outline-offset: 4px; }
-        /* Ensure burger lines use sticky color when active */
+        .burger:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
         .burger.active .burger-line { background-color: var(--dark-text); }
-        .nav-section:not(.sticky-nav) .burger.active .burger-line { background-color: var(--white); } /* Keep white when active on transparent nav */
+        .nav-section:not(.sticky-nav) .burger.active .burger-line { background-color: var(--white); }
 
         .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(30, 30, 30, 0.98); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: 1000; padding: 80px 25px 40px 25px; text-align: center; overflow-y: auto; }
         .mobile-nav nav { display: flex; flex-direction: column; height: 100%; }
@@ -240,52 +234,41 @@
         body.overflow-hidden { overflow: hidden; }
 
         /* === MEDIA QUERIES === */
-        @media (min-width: 992px) {
-            .nav-menu-wrapper { display: flex; } /* Show desktop nav */
-        }
-
+        @media (min-width: 992px) { .nav-menu-wrapper { display: flex; } }
         @media (max-width: 991px) {
-            .burger { display: block; } /* Show burger on tablet/mobile */
-            h1 { font-size: clamp(2.2rem, 6vw, 2.8rem); } /* Slightly adjust h1 */
-            h2 { font-size: clamp(1.7rem, 5vw, 2.1rem); } /* Slightly adjust h2 */
-            .grid-2-col { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; /* Reduce gap slightly */ }
+            .burger { display: block; }
+            h1 { font-size: clamp(2.2rem, 6vw, 2.8rem); }
+            h2 { font-size: clamp(1.7rem, 5vw, 2.1rem); }
+            .grid-2-col { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
              .block-header.is-left, .block-title.is-left, .block-overline.is-left { text-align: center; }
-            /* Stack order for 2-column layouts */
             .intro-details, .why-us-details, .founder-details { order: 2; margin-top: 2em;}
             .intro-image, .why-us-image, .founder-image-wrapper { order: 1; margin-bottom: 30px; max-width: 500px; margin-left:auto; margin-right: auto;}
              .founder-image-wrapper img { max-width: 200px; }
-             .footer-back-to-top { grid-column: auto; justify-self: center; } /* Center back-to-top on tablet */
+             .footer-back-to-top { grid-column: auto; justify-self: center; }
         }
-
          @media (max-width: 767px) {
-             .section { padding: clamp(3rem, 8vw, 4rem) 0; } /* Adjust section padding */
+             .section { padding: clamp(3rem, 8vw, 4rem) 0; }
              .section-narrow { padding: clamp(2.5rem, 6vw, 3.5rem) 0; }
              #contact-form-section { padding: clamp(2.5rem, 6vw, 3.5rem) 0; }
              #cta-final { padding: clamp(3rem, 8vw, 4.5rem) 0; }
-
              .footer-section { padding: 50px 0 25px 0; }
              .footer-container { grid-template-columns: 1fr; text-align: center; gap: 25px; margin-bottom: 35px;}
              .footer-soc-con, .footer-contact { justify-content: center; }
              .footer-menu-title { margin-top: 1.5em; }
-             .footer-menu-con:first-child .footer-menu-title { margin-top: 0; } /* Avoid double margin */
-
-             .service-grid, .who-i-help-grid { grid-template-columns: 1fr; gap: 25px;} /* Stack services */
-             .service-wrapper { min-height: auto; } /* Allow service cards to resize */
-
-             /* Hero adjustments */
+             .footer-menu-con:first-child .footer-menu-title { margin-top: 0; }
+             .service-grid { grid-template-columns: 1fr; gap: 25px;}
+             .service-wrapper { min-height: auto; }
              .hero-section-new { padding-top: 120px; padding-bottom: clamp(4rem, 10vw, 6rem); }
              .hero-header-new { font-size: clamp(2rem, 8vw, 2.8rem); min-height: 80px;}
              .hero-header-new .anim-text { line-height: 1.35; font-size: 90%; }
              .hero-subheadline-new { font-size: 1rem; }
              .hero-concepts-list { gap: 1rem 1.5rem; justify-content: center;}
              .hero-concept-item { font-size: 0.85rem;}
-
              .contact-form-wrapper { padding: 2rem 1.5rem; }
              .nav-brand-link img { max-height: 45px; }
              .client-logo-item img { max-height: 50px; }
-             .testimonial-card::before { left: 15px; font-size: 2rem; } /* Adjust quote position */
+             .testimonial-card::before { left: 15px; font-size: 2rem; }
          }
-
     </style>
 
 </head>
@@ -304,7 +287,7 @@
                     <a href="#home" class="nav-link w--current">Home</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#services" class="nav-link">Services</a>
-                    <a href="#contact-form-section" class="nav-link">Contact</a> <!-- Updated link target -->
+                    <a href="#contact-form-section" class="nav-link">Contact</a>
                 </div>
                 <!-- Mobile Burger Menu Trigger -->
                 <button class="burger" id="burger-menu" aria-label="Toggle mobile navigation" aria-expanded="false" aria-controls="mobile-nav-overlay">
@@ -322,9 +305,9 @@
             <a href="#home" class="mobile-link">Home</a>
             <a href="#about" class="mobile-link">About</a>
             <a href="#services" class="mobile-link">Services</a>
-            <a href="#contact-form-section" class="mobile-link">Contact</a> <!-- Updated link target -->
+            <a href="#contact-form-section" class="mobile-link">Contact</a>
             <div class="mobile-cta">
-                 <a href="#contact-form-section" class="btn primary-btn"> <!-- Updated link target -->
+                 <a href="#contact-form-section" class="btn primary-btn">
                      <i class="fab fa-whatsapp fa-fw"></i> Request Callback
                  </a>
             </div>
@@ -350,14 +333,14 @@
                         Clear, committed marketing for beauty and wellness professionals. Welcome to The Oxygen Factor — a one-person service run by someone who understands your world. No big teams. No confusion. Just honest help to grow your business online.
                     </p>
                     <div class="hero-cta-wrapper">
-                        <a href="#contact-form-section" class="btn primary-btn"> <!-- Updated link target -->
+                        <a href="#contact-form-section" class="btn primary-btn">
                             <i class="fab fa-whatsapp fa-fw"></i> Request Callback via WhatsApp
                         </a>
                     </div>
-                     <ul class="hero-concepts-list"> <!-- Changed to UL for semantics -->
+                     <ul class="hero-concepts-list">
                         <li class="hero-concept-item"><i class="fa-solid fa-calendar-check fa-fw"></i> More Bookings</li>
                         <li class="hero-concept-item"><i class="fa-solid fa-bullhorn fa-fw"></i> Brand Authority</li>
-                        <li class="hero-concept-item"><i class="fa-solid fa-lightbulb fa-fw"></i> Clear Strategy</li> <!-- Updated icon -->
+                        <li class="hero-concept-item"><i class="fa-solid fa-lightbulb fa-fw"></i> Clear Strategy</li>
                     </ul>
                 </div>
             </div>
@@ -379,15 +362,15 @@
                      </div>
                      <div class="client-logo-item">
                           <!-- TODO: Replace with actual logo file and update alt text -->
-                         <img src="Client Logo B.PNG" alt="Client Logo C"> <!-- Placeholder name -->
+                         <img src="Client Logo B.PNG" alt="Client Logo C">
                      </div>
                      <div class="client-logo-item">
                           <!-- TODO: Replace with actual logo file and update alt text -->
-                         <img src="Client Logo B.PNG" alt="Client Logo D"> <!-- Placeholder name -->
+                         <img src="Client Logo B.PNG" alt="Client Logo D">
                      </div>
                      <div class="client-logo-item">
                            <!-- TODO: Replace with actual logo file and update alt text -->
-                         <img src="Client Logo B.PNG" alt="Client Logo E"> <!-- Placeholder name -->
+                         <img src="Client Logo B.PNG" alt="Client Logo E">
                      </div>
                 </div>
             </div>
@@ -474,7 +457,7 @@
                      </div>
                 </div>
                  <div class="text-center" style="margin-top: 3.5rem;">
-                     <a href="#contact-form-section" class="btn primary-btn">Discuss Your Needs</a> <!-- Updated link target -->
+                     <a href="#contact-form-section" class="btn primary-btn">Discuss Your Needs</a>
                 </div>
             </div>
         </section>
@@ -493,7 +476,7 @@
                         <div class="trial-offer">
                             <strong>Trust Comes First:</strong> Get started today, and pay only after one week.
                         </div>
-                         <a href="#contact-form-section" class="btn secondary-btn" style="margin-top: 2.5em;"> <!-- Updated link target -->
+                         <a href="#contact-form-section" class="btn secondary-btn" style="margin-top: 2.5em;">
                              <i class="fab fa-whatsapp fa-fw"></i> Request Callback
                          </a>
                     </div>
@@ -549,15 +532,15 @@
         <!-- === END TESTIMONIALS SECTION === -->
 
         <!-- === CONTACT FORM SECTION === -->
-        <section id="contact-form-section" class="section section-bg-light" aria-labelledby="contact-heading"> <!-- Changed ID -->
+        <section id="contact-form-section" class="section section-bg-light" aria-labelledby="contact-heading">
             <div class="container">
                 <div class="block-overline is-center">GET IN TOUCH</div>
                 <h2 id="contact-heading" class="block-header is-center">Request Your Callback</h2>
                 <p class="text-center max-width-narrow" style="margin-bottom: 3em;">Fill out the form below, and I'll contact you via WhatsApp to discuss how The Oxygen Factor can help your business.</p>
 
                 <div class="contact-form-wrapper">
-                    <!-- Form action is less critical now as we use fetch, but good practice to keep it -->
-                    <form action="https://formspree.io/f/xkgrnyba" method="POST" id="whatsapp-contact-form" novalidate> <!-- Kept action for non-JS fallback (though unlikely) -->
+                    <!-- Form action is kept for non-JS fallback but fetch handles submission -->
+                    <form action="https://formspree.io/f/xkgrnyba" method="POST" id="whatsapp-contact-form" novalidate>
                         <div class="form-group">
                             <label for="name">Full Name <span class="accent-text">*</span></label>
                             <input type="text" id="name" name="name" placeholder="Enter your full name" required aria-required="true" autocomplete="name">
@@ -581,8 +564,8 @@
                             </button>
                         </div>
                          <!-- Confirmation message container -->
-                         <div class="form-group" style="margin-bottom: 0;"> <!-- Remove bottom margin for this group -->
-                             <p class="form-confirmation" role="status">Thanks! I'll be in touch via WhatsApp soon.</p> <!-- Added role="status" for screen readers -->
+                         <div class="form-group" style="margin-bottom: 0;">
+                             <p class="form-confirmation" role="status">Thanks! I'll be in touch via WhatsApp soon.</p>
                         </div>
                     </form>
                 </div>
@@ -594,13 +577,13 @@
         <section id="cta-final" class="section footer-cta-section" aria-labelledby="cta-heading">
             <div class="container">
                  <div class="block-overline is-center" style="color: rgba(255,255,255,0.85);">READY TO GROW?</div>
-                 <h2 id="cta-heading" class="cta-header" style="font-size: clamp(1.8rem, 5vw, 2.8rem);"> <!-- Combine h2s & adjust size -->
+                 <h2 id="cta-heading" class="cta-header" style="font-size: clamp(1.8rem, 5vw, 2.8rem);">
                     You focus on your clients.<br> I'll focus on bringing them to you.
                  </h2>
                  <p class="cta-body">Let's give your brand the oxygen it needs. Request a callback below to get started.</p>
-                 <a href="#contact-form-section" class="btn primary-btn cta-main-btn"> <!-- Updated link target -->
+                 <a href="#contact-form-section" class="btn primary-btn cta-main-btn">
                      <i class="fab fa-whatsapp fa-fw"></i>
-                     <span>Request Callback via WhatsApp</span> <!-- Span text is already styled -->
+                     <span>Request Callback via WhatsApp</span>
                  </a>
             </div>
         </section>
@@ -611,18 +594,18 @@
             <div class="container">
                 <div class="footer-container">
                     <div class="footer-menu-con">
-                        <h3 class="footer-menu-title">Navigation</h3> <!-- Changed to h3 for semantics -->
+                        <h3 class="footer-menu-title">Navigation</h3>
                         <ul>
                             <li><a href="#home" class="footer-link">Home</a></li>
                             <li><a href="#about" class="footer-link">About</a></li>
                             <li><a href="#services" class="footer-link">Services</a></li>
                             <li><a href="#testimonials" class="footer-link">Testimonials</a></li>
-                            <li><a href="#contact-form-section" class="footer-link">Contact</a></li> <!-- Updated link target -->
-                            <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li> <!-- TODO: Create Privacy Policy page at this URL -->
+                            <li><a href="#contact-form-section" class="footer-link">Contact</a></li>
+                            <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li> <!-- TODO: Create Privacy Policy page -->
                         </ul>
                     </div>
                      <div class="footer-menu-con">
-                        <h3 class="footer-menu-title">Get in touch</h3> <!-- Changed to h3 -->
+                        <h3 class="footer-menu-title">Get in touch</h3>
                          <ul>
                              <li>
                                  <div class="footer-contact">
@@ -639,13 +622,13 @@
                             <li>
                                 <div class="footer-contact">
                                      <i class="fab fa-whatsapp fa-fw"></i>
-                                     <a href="#contact-form-section" class="footer-contact-link">Request WhatsApp Callback</a> <!-- Updated link target -->
+                                     <a href="#contact-form-section" class="footer-contact-link">Request WhatsApp Callback</a>
                                  </div>
                             </li>
                          </ul>
                     </div>
                     <div class="footer-menu-con">
-                        <h3 class="footer-menu-title">Follow Me</h3> <!-- Changed to h3 -->
+                        <h3 class="footer-menu-title">Follow Me</h3>
                         <div class="footer-soc-con">
                             <!-- TODO: Verify Instagram link -->
                             <a href="https://www.instagram.com/nabilsp2024/?hl=en" target="_blank" rel="noopener noreferrer" class="footer-soc-wrapper" title="Instagram" aria-label="Visit The Oxygen Factor on Instagram">
@@ -655,7 +638,6 @@
                             <a href="https://www.facebook.com/profile.php?id=100070079559003" target="_blank" rel="noopener noreferrer" class="footer-soc-wrapper" title="Facebook" aria-label="Visit The Oxygen Factor on Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                             <!-- Removed LinkedIn Link -->
                         </div>
                     </div>
                      <div class="footer-menu-con footer-back-to-top">
@@ -673,7 +655,6 @@
 
     <!-- === SCRIPTS === -->
     <script>
-        // Wait for the DOM to be ready
         document.addEventListener('DOMContentLoaded', function() {
 
              // Set Copyright Year
@@ -683,59 +664,22 @@
              }
 
              // --- GSAP Hero Text Animation ---
-             // Check if GSAP and jQuery are loaded before running animation
              if (typeof gsap !== 'undefined' && typeof $ !== 'undefined') {
-                 // Run on window load to ensure fonts/images affecting layout are loaded
                  $(window).on("load", function() {
                      gsap.delayedCall(0.2, function() {
                          const header = $('.hero-header-new');
                          const texts = header.find('.anim-text');
-
-                         if (!header.length || !texts.length) {
-                             console.warn("Hero animation elements not found.");
-                             return; // Exit if elements aren't present
-                         }
-
-                          // Initial setup for all text elements
-                          texts.each(function(index, el) {
-                             gsap.set(el, {
-                                 opacity: 0,
-                                 position: 'absolute',
-                                 top: 0,
-                                 left: 0,
-                                 right: 0,
-                                 textAlign: 'center',
-                                 clip: "rect(0px, 0px, 400px, 0px)"
-                             });
-                          });
-
-                         // Make the first item visible and relatively positioned initially
-                         if (texts.length > 0) {
-                             gsap.set(texts.first(), { position: 'relative', opacity: 1, clip: 'auto' });
-                         }
-
-                         // Timeline for cycling through the text
+                         if (!header.length || !texts.length) { console.warn("Hero animation elements not found."); return; }
+                          texts.each(function(index, el) { gsap.set(el, { opacity: 0, position: 'absolute', top: 0, left: 0, right: 0, textAlign: 'center', clip: "rect(0px, 0px, 400px, 0px)" }); });
+                         if (texts.length > 0) { gsap.set(texts.first(), { position: 'relative', opacity: 1, clip: 'auto' }); }
                          var tlMainAnim = gsap.timeline({ repeat: -1, defaults: { ease: "expo.out" } });
-
                          texts.each(function(index, el) {
                              const element = $(el);
-                             // Estimate width robustly - ensures animation works even if hidden initially
                              let elementWidth = element.get(0).scrollWidth || element.text().length * (parseFloat(element.css('font-size')) || 16) * 0.6 || 250;
-
                              if (elementWidth > 5) {
-                                 // Animate In
-                                 tlMainAnim.to(element, {
-                                     opacity: 1,
-                                     duration: 0.1,
-                                     onStart: () => { // Ensure it's positioned correctly before animating clip
-                                        gsap.set(element, { position: 'absolute' });
-                                        if (index === 0) gsap.set(texts.first(), { position: 'relative' }); // Keep first relative when it loops back
-                                     }
-                                 }, index === 0 ? "+=1.6" : ">"); // Add delay before first animation runs
+                                 tlMainAnim.to(element, { opacity: 1, duration: 0.1, onStart: () => { gsap.set(element, { position: 'absolute' }); if (index === 0) gsap.set(texts.first(), { position: 'relative' }); } }, index === 0 ? "+=1.6" : ">");
                                  tlMainAnim.to(element, { clip: `rect(0px, ${elementWidth + 35}px, 400px, 0px)`, duration: 1.1 });
-
-                                 // Animate Out
-                                 tlMainAnim.to(element, { clip: `rect(0px, ${elementWidth + 35}px, 400px, ${elementWidth + 35}px)`, duration: 1.1 }, "+=1.4"); // Pause duration
+                                 tlMainAnim.to(element, { clip: `rect(0px, ${elementWidth + 35}px, 400px, ${elementWidth + 35}px)`, duration: 1.1 }, "+=1.4");
                                  tlMainAnim.to(element, { opacity: 0, duration: 0.1 });
                              }
                          });
@@ -743,31 +687,18 @@
                  });
              } else {
                  console.warn("GSAP or jQuery not loaded, skipping hero animation.");
-                 // Optionally display the first text statically if animation libs fail
                  const firstAnimText = document.querySelector('.hero-header-new .anim-text');
-                 if (firstAnimText) {
-                     firstAnimText.style.opacity = '1';
-                     firstAnimText.style.position = 'relative';
-                     firstAnimText.style.clip = 'auto';
-                 }
+                 if (firstAnimText) { firstAnimText.style.opacity = '1'; firstAnimText.style.position = 'relative'; firstAnimText.style.clip = 'auto'; }
              }
 
              // --- Sticky Navigation ---
              const nav = document.getElementById('main-nav');
              if (nav) {
-                 const stickyTriggerPoint = 100; // Pixels from top to trigger sticky
-
+                 const stickyTriggerPoint = 100;
                  window.addEventListener('scroll', function() {
-                     if (window.scrollY > stickyTriggerPoint) {
-                         if (!nav.classList.contains('sticky-nav')) {
-                             nav.classList.add('sticky-nav');
-                         }
-                     } else {
-                         if (nav.classList.contains('sticky-nav')) {
-                              nav.classList.remove('sticky-nav');
-                         }
-                     }
-                 }, { passive: true }); // Use passive listener for scroll performance
+                     if (window.scrollY > stickyTriggerPoint) { if (!nav.classList.contains('sticky-nav')) { nav.classList.add('sticky-nav'); } }
+                     else { if (nav.classList.contains('sticky-nav')) { nav.classList.remove('sticky-nav'); } }
+                 }, { passive: true });
              }
 
             // --- Smooth Scroll & Mobile Nav Interaction ---
@@ -780,40 +711,22 @@
                 link.addEventListener('click', function(event) {
                     const targetId = this.hash;
                     const targetElement = document.querySelector(targetId);
-
                     if (targetElement) {
                         event.preventDefault();
-
                         let scrollTargetPosition = targetElement.offsetTop;
                         const mainNav = document.getElementById('main-nav');
                         let navOffset = 0;
-
-                        // Calculate offset based on whether nav *will be* sticky at the destination
                         if (mainNav) {
                             const isCurrentlySticky = mainNav.classList.contains('sticky-nav');
-                            const willBeSticky = scrollTargetPosition > 100; // Use the trigger point
-
-                            if (willBeSticky) {
-                                navOffset = mainNav.offsetHeight > 40 ? mainNav.offsetHeight : 70; // Use current height or a fallback
-                            } else if (isCurrentlySticky && !willBeSticky) {
-                                navOffset = 0;
-                            } else {
-                                navOffset = 0;
-                            }
+                            const willBeSticky = scrollTargetPosition > 100;
+                            if (willBeSticky) { navOffset = mainNav.offsetHeight > 40 ? mainNav.offsetHeight : 70; }
+                            else if (isCurrentlySticky && !willBeSticky) { navOffset = 0; }
+                            else { navOffset = 0; }
                          }
-
                         scrollTargetPosition -= navOffset;
-                        scrollTargetPosition -= 20; // Add a small buffer
-
-                        window.scrollTo({
-                            top: Math.max(0, scrollTargetPosition), // Ensure not scrolling to negative values
-                            behavior: 'smooth'
-                        });
-
-                        // Close mobile nav if it's open and the link was clicked within it or is a general anchor link
-                        if (mobileNav && mobileNav.style.display === 'block' || this.closest('.mobile-nav')) {
-                            closeMobileNav();
-                        }
+                        scrollTargetPosition -= 20;
+                        window.scrollTo({ top: Math.max(0, scrollTargetPosition), behavior: 'smooth' });
+                        if (mobileNav && mobileNav.style.display === 'block' || this.closest('.mobile-nav')) { closeMobileNav(); }
                     }
                 });
             });
@@ -824,16 +737,10 @@
                      const isExpanded = burger.getAttribute('aria-expanded') === 'true';
                      burger.classList.toggle('active');
                      burger.setAttribute('aria-expanded', !isExpanded);
-
-                     if (!isExpanded) {
-                         mobileNav.style.display = 'block';
-                         body.classList.add('overflow-hidden');
-                     } else {
-                         closeMobileNav(); // Use function to ensure body class is removed
-                     }
+                     if (!isExpanded) { mobileNav.style.display = 'block'; body.classList.add('overflow-hidden'); }
+                     else { closeMobileNav(); }
                  });
              }
-
              function closeMobileNav() {
                  if (mobileNav && burger && burger.classList.contains('active')) {
                      mobileNav.style.display = 'none';
@@ -844,11 +751,12 @@
              }
 
             // --- Form Handling with Fetch to Formspree & Custom Confirmation ---
+            // Ensure this is the ONLY block handling the 'whatsapp-contact-form' submission
             const contactForm = document.getElementById('whatsapp-contact-form');
             if (contactForm) {
                 const confirmationMessage = contactForm.querySelector('.form-confirmation');
                 const submitButton = contactForm.querySelector('.form-submit-btn');
-                const formSpreeEndpoint = 'https://formspree.io/f/xkgrnyba'; // <-- YOUR SPECIFIC ENDPOINT
+                const formSpreeEndpoint = 'https://formspree.io/f/xkgrnyba'; // Your specific endpoint
 
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault(); // Prevent default browser submission
@@ -863,12 +771,11 @@
                         return; // Stop if validation fails
                     }
 
-                    // Disable button and show loading state (optional but good UX)
+                    // Disable button and show loading state
                     if (submitButton) {
                         submitButton.disabled = true;
-                        // Using text indicator; replace with FontAwesome if preferred and ensure FA is loaded
                         submitButton.innerHTML = 'Sending...';
-                        // Example with FontAwesome spinner:
+                        // Optional: Add spinner icon if FontAwesome is reliably loaded
                         // submitButton.innerHTML = '<i class="fas fa-spinner fa-spin fa-fw"></i> Sending...';
                     }
 
@@ -880,72 +787,70 @@
                         method: 'POST',
                         body: formData,
                         headers: {
-                            'Accept': 'application/json' // Important for Formspree to know how to respond
+                            'Accept': 'application/json' // Advise Formspree to respond with JSON
                         }
                     })
                     .then(response => {
                         if (response.ok) {
-                            // SUCCESS: Formspree accepted the submission
+                            // SUCCESS
                             console.log('Form submitted successfully to Formspree.');
-
-                            // Hide form groups except the confirmation message container
                             const formGroups = contactForm.querySelectorAll('.form-group');
                             formGroups.forEach(group => {
                                 if (!group.contains(confirmationMessage)) {
                                     group.style.display = 'none'; // Hide the group
                                 }
                             });
-
-                            // Show your custom confirmation message
                             if (confirmationMessage) {
                                 confirmationMessage.textContent = "Thanks! I'll be in touch via WhatsApp soon.";
-                                confirmationMessage.style.color = 'var(--body-text-color)'; // Reset color just in case
+                                confirmationMessage.style.color = 'var(--body-text-color)';
                                 confirmationMessage.style.display = 'block';
                             }
-                            // contactForm.reset(); // Optionally clear the form fields
+                            // contactForm.reset(); // Uncomment to clear fields on success
 
                         } else {
                             // ERROR: Formspree returned an error
-                            response.json().then(data => { // Try to get error details from Formspree
+                            response.json().then(data => {
                                 console.error('Formspree submission error:', data);
                                 let errorText = 'Sorry, there was a problem submitting your request. Please try again.';
                                 if (data && data.errors) {
-                                    // Use Formspree's specific error message if available
                                     errorText = data.errors.map(error => error.message).join(', ');
                                 }
                                 if (confirmationMessage) {
                                     confirmationMessage.textContent = errorText;
-                                    confirmationMessage.style.color = 'red'; // Make error visible
+                                    confirmationMessage.style.color = 'red';
                                     confirmationMessage.style.display = 'block';
+                                    // Ensure confirmation field is visible if other fields were hidden
+                                    confirmationMessage.closest('.form-group').style.display = 'block';
                                 }
                             }).catch(jsonError => {
-                                // Fallback error if parsing Formspree response fails
                                 console.error('Error parsing Formspree error response:', jsonError);
                                 if (confirmationMessage) {
                                     confirmationMessage.textContent = 'Sorry, an unexpected error occurred. Please try again.';
                                     confirmationMessage.style.color = 'red';
                                     confirmationMessage.style.display = 'block';
+                                    confirmationMessage.closest('.form-group').style.display = 'block';
                                 }
                             });
                             // Re-enable the button on error
                             if (submitButton) {
                                 submitButton.disabled = false;
-                                submitButton.innerHTML = '<i class="fab fa-whatsapp fa-fw"></i> Send Request'; // Reset button text
+                                submitButton.innerHTML = '<i class="fab fa-whatsapp fa-fw"></i> Send Request';
                             }
                         }
                     })
                     .catch(error => {
-                        // NETWORK ERROR: Couldn't reach Formspree
+                        // NETWORK ERROR
                         console.error('Network error submitting form:', error);
                         if (confirmationMessage) {
                             confirmationMessage.textContent = 'Network error. Please check your connection and try again.';
                             confirmationMessage.style.color = 'red';
                             confirmationMessage.style.display = 'block';
+                             confirmationMessage.closest('.form-group').style.display = 'block';
                         }
                         // Re-enable the button on network error
                         if (submitButton) {
                             submitButton.disabled = false;
-                            submitButton.innerHTML = '<i class="fab fa-whatsapp fa-fw"></i> Send Request'; // Reset button text
+                            submitButton.innerHTML = '<i class="fab fa-whatsapp fa-fw"></i> Send Request';
                         }
                     });
                 });
